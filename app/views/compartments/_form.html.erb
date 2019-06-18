@@ -1,0 +1,37 @@
+<%= form_with(model: compartment, local: true) do |form| %>
+  <% if compartment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(compartment.errors.count, "error") %> prohibited this compartment from being saved:</h2>
+
+      <ul>
+      <% compartment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shelf %>
+    <%= form.number_field :shelf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

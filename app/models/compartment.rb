@@ -1,0 +1,2 @@
+class Compartment < ApplicationRecord
+end
